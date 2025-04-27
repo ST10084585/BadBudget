@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- Welcome Text -->
+    <TextView
+        android:id="@+id/textViewWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome, User!"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_margin="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_margin="24dp" />
+
+    <!-- Notifications Icon -->
+    <ImageView
+        android:id="@+id/imageViewNotifications"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@android:drawable/ic_dialog_info"
+        app:layout_constraintTop_toTopOf="@id/textViewWelcome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_margin="24dp" />
+
+    <!-- Budget Progress Title -->
+    <TextView
+        android:id="@+id/textViewBudgetTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Monthly Budget Progress"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        app:layout_constraintTop_toBottomOf="@id/textViewWelcome"
+        app:layout_constraintTop_margin="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_margin="24dp" />
+
+    <!-- Budget ProgressBar -->
+    <ProgressBar
+        android:id="@+id/progressBarBudget"
+        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:progress="50"
+        android:max="100"
+        android:progressTint="#4CAF50"
+        app:layout_constraintTop_toBottomOf="@id/textViewBudgetTitle"
+        app:layout_constraintTop_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <!-- Expenses Summary -->
+    <TextView
+        android:id="@+id/textViewExpensesSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This Month: R2500 | Last Month: R3200"
+        android:textSize="16sp"
+        android:textColor="#555555"
+        app:layout_constraintTop_toBottomOf="@id/progressBarBudget"
+        app:layout_constraintTop_margin="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_margin="24dp" />
+
+    <!-- Upcoming Bills Section -->
+    <TextView
+        android:id="@+id/textViewUpcomingBillsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upcoming Bills"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        app:layout_constraintTop_toBottomOf="@id/textViewExpensesSummary"
+        app:layout_constraintTop_margin="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_margin="24dp" />
+
+    <!-- Example Bill -->
+    <TextView
+        android:id="@+id/textViewBillExample"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="⚠️ Electricity Bill - Due in 3 days"
+        android:textSize="16sp"
+        android:textColor="#D32F2F"
+        app:layout_constraintTop_toBottomOf="@id/textViewUpcomingBillsTitle"
+        app:layout_constraintTop_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_margin="24dp" />
+
+    <!-- Placeholder for Mini Graph -->
+    <FrameLayout
+        android:id="@+id/miniGraphPlaceholder"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:background="#EEEEEE"
+        app:layout_constraintTop_toBottomOf="@id/textViewBillExample"
+        app:layout_constraintTop_margin="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <!-- Bottom Navigation (Simple for now) -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#1976D2"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/navHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:textColor="#FFFFFF"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/navAddExpense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" | Add Expense | "
+            android:textColor="#FFFFFF"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/navBudgets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Budgets"
+            android:textColor="#FFFFFF"
+            android:padding="8dp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
